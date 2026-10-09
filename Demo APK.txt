@@ -1,0 +1,50 @@
+# 🚀 Ringkasan Demo Aplikasi: Sarung Santri Store (POS & E-Commerce)
+
+Aplikasi ini adalah platform terintegrasi yang menggabungkan sistem kasir (Point of Sale/POS) toko fisik dengan toko online (E-Commerce) khusus untuk penjualan sarung, perlengkapan ibadah, dan fashion muslim.
+
+Berikut adalah poin-poin utama fitur yang dapat Anda demokan:
+
+## 🛒 1. Tampilan Toko Online (E-Commerce)
+*   **Beranda Interaktif (Mobile-First)**
+    *   Slider Banner animasi otomatis (tanpa patah/mundur).
+    *   Pengelompokan Produk Unggulan, Produk Terbaru, dan Produk Terlaris (Max 10). Produk dikelompokkan secara rapi berdasarkan **SKU Induk**, bukan per varian.
+    *   Desain responsif dengan animasi "Buy Now" yang menarik saat kursor diarahkan ke gambar produk.
+*   **Katalog & Detail Produk**
+    *   Filter pencarian dan kategori produk (dropdown) yang mudah dinavigasi.
+    *   Halaman detail produk untuk memilih varian (warna/motif/ukuran) lengkap dengan galeri gambar pendukung.
+*   **Sistem Harga Dinamis (Grosir & Tipe Pelanggan)**
+    *   Harga otomatis berubah sesuai kategori akun pelanggan yang login (Umum, Reseller, dll).
+    *   Aturan harga bertingkat (Tier Pricing): Beli 1 (Ecer/Umum) harga normal, beli banyak (grosir) otomatis mendapat harga khusus sesuai tingkatan qty.
+*   **Checkout & Keranjang Belanja**
+    *   Proses keranjang belanja yang cepat dan ringkas.
+    *   Sistem checkout yang mendukung penghitungan alamat, ongkos kirim (jika ada), dan pemilihan metode pembayaran.
+
+## 💻 2. Sistem Kasir Toko Fisik (POS)
+*   **Antarmuka Kasir Responsif**
+    *   Pencarian produk cepat dengan filter tombol kategori ringkas.
+    *   Dukungan untuk multi-harga (Eceran, Reseller) langsung dari halaman popup saat item dimasukkan ke kasir.
+*   **Manajemen Cetak & Share Struk**
+    *   Cetak struk *thermal* (58mm/60mm) dengan format tulisan yang sudah terpusat (*center*) secara otomatis di kertas.
+    *   Fitur "Bagikan Struk (Share JPG)": Mengubah struk digital menjadi gambar tanpa bingkai (*borderless*) yang rapi, siap dikirim (di-share) via WhatsApp pelanggan tanpa perlu dicetak.
+*   **Fitur Transaksi Lanjutan**
+    *   Mendukung pencatatan sistem Kasbon (Utang/Piutang) pelanggan.
+    *   Mendukung pencatatan Retur Barang (pengembalian produk) beserta pengembalian dana dan pemulihan stok secara otomatis.
+
+## 📦 3. Dasbor Admin (Manajemen Panel)
+*   **Manajemen Pesanan Online (Order Tracking)**
+    *   Alur status pesanan: Menunggu Konfirmasi ➔ Diproses ➔ Siap Kirim ➔ Dikirim ➔ Selesai.
+    *   Fitur **Batal/Tolak Pesanan**: Tersedia tombol "✕ Batal" dengan popup wajib isi alasan pembatalan/penolakan. Sistem akan melakukan *auto-restore* (mengembalikan stok secara otomatis) saat pesanan dibatalkan.
+*   **Manajemen Inventaris & Harga (Master Data)**
+    *   Mendukung pembuatan SKU Induk dan SKU Varian di dalamnya.
+    *   Sistem validasi form harga cerdas: Mencegah duplikasi *minimum quantity* (`min_qty`) dalam satu tipe harga.
+    *   Pelabelan otomatis: Jika input `min_qty` = 1, label otomatis dikunci menjadi "Ecer". Urutan tipe harga di tabel juga diprioritaskan untuk "Umum" dan "Reseller" agar tampil di atas.
+*   **Manajemen Pengguna (Multi-Role)**
+    *   Hak akses yang dibagi secara jelas: Pemilik (Akses penuh & Laporan lengkap), Admin (Fokus di manajemen produk & pesanan online), Kasir (Fokus di antarmuka POS), dan Kurir (Melihat jadwal pengiriman).
+
+---
+
+### 💡 Tips Alur Demo Cepat (Scenario):
+1.  **Skenario Pelanggan Online:** Buka halaman depan web ➔ Sorot Banner yang bergerak otomatis ➔ Jelaskan bahwa "Produk Terbaru" & "Terlaris" tampil per SKU Induk ➔ Klik satu produk ➔ Pilih varian ➔ Masukkan keranjang ➔ Demokan hingga proses Checkout.
+2.  **Skenario Admin Order:** Login akun Admin/Pemilik ➔ Masuk menu "Pesanan Online" ➔ Tunjukkan cara memproses pesanan ke tahap selanjutnya ➔ Demokan klik tombol "✕ Batal", isi alasannya, lalu jelaskan ke penonton bahwa stok barangnya otomatis kembali (*restored*).
+3.  **Skenario Kasir (Offline):** Buka menu Kasir (POS) ➔ Pilih produk ➔ Lakukan pembayaran (Tunai) ➔ Saat muncul struk, tunjukkan format tengahnya ➔ Klik tombol "Share Struk (JPG)" untuk memamerkan fitur konversi struk jadi gambar tanpa bingkai.
+4.  **Skenario Manajemen Harga (Backend):** Buka menu Master Produk / Harga ➔ Coba tambahkan harga baru ➔ Demokan sistem validasi yang menolak jika `min_qty` sama dalam 1 tipe harga, dan tunjukkan bagaimana sistem otomatis melabeli "Ecer" bila `min_qty` diset ke 1.

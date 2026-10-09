@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <rect width="300" height="100" fill="transparent"/>
+  <text x="10" y="75" font-family="Arial Black, sans-serif" font-size="75" font-style="italic" font-weight="900" fill="#006677">BNI</text>
+  <path d="M140,20 L165,20 L160,45 L140,45 Z" fill="#f15a23" opacity="0"/>
+  <text x="148" y="38" font-family="Arial Black, sans-serif" font-size="28" font-style="italic" font-weight="900" fill="#f15a23">46</text>
+</svg>

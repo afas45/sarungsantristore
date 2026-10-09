@@ -1,0 +1,363 @@
+/* =============================================
+   KASIR IBTIDAIYAH - Dashboard Styles
+   ============================================= */
+
+/* === Dashboard Grid === */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dashboard-grid > * {
+    min-width: 0;
+}
+
+.dashboard-grid.full {
+    grid-template-columns: 1fr;
+}
+
+/* === Chart Container === */
+.chart-container {
+    position: relative;
+    height: 300px;
+    padding: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.chart-inner {
+    position: relative;
+    height: 100%;
+    min-width: 600px;
+}
+
+.chart-container canvas {
+    max-height: 100%;
+}
+
+/* === Chart Header === */
+.chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.chart-tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--gray-100);
+    border-radius: var(--border-radius-sm);
+    padding: 3px;
+}
+
+.chart-tab {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+    background: none;
+}
+
+.chart-tab:hover {
+    color: var(--gray-800);
+}
+
+.chart-tab.active {
+    background: var(--card-bg);
+    color: var(--primary-600);
+    font-weight: 600;
+    box-shadow: var(--shadow-xs);
+    border-bottom: 2px solid var(--primary-500);
+}
+
+/* === Recent Transactions List === */
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: background var(--transition-fast);
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.transaction-icon.sale {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.transaction-icon.purchase {
+    background: var(--info-bg);
+    color: var(--info);
+}
+
+.transaction-icon.debt {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+.transaction-icon.payment {
+    background: var(--gold-100);
+    color: var(--gold-600);
+}
+
+.transaction-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.transaction-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.transaction-meta {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    margin-top: 2px;
+}
+
+.transaction-amount {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.transaction-amount.incoming {
+    color: var(--success);
+}
+
+.transaction-amount.outgoing {
+    color: var(--danger);
+}
+
+/* === Quick Actions === */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.quick-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 10px;
+    border-radius: var(--border-radius-sm);
+    border: 1.5px solid var(--border-color);
+    background: var(--card-bg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    color: var(--gray-700);
+}
+
+.quick-action:hover {
+    border-color: var(--primary-500);
+    background: var(--primary-50);
+    color: var(--primary-600);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.quick-action-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--primary-500);
+}
+
+.quick-action-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* === Alert Widget === */
+.alert-widget {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alert-widget-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8125rem;
+}
+
+.alert-widget-item.overdue {
+    background: var(--danger-bg);
+    border: 1px solid #fecaca;
+}
+
+.alert-widget-item.warning {
+    background: var(--warning-bg);
+    border: 1px solid #fde68a;
+}
+
+.alert-widget-item.info {
+    background: var(--info-bg);
+    border: 1px solid #bfdbfe;
+}
+
+.alert-widget-count {
+    font-weight: 800;
+    font-size: 1.25rem;
+    min-width: 36px;
+    text-align: center;
+}
+
+.alert-widget-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+/* === Top Products === */
+.top-product-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.top-product-item:last-child {
+    border-bottom: none;
+}
+
+.top-product-rank {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.top-product-rank.rank-1 { background: var(--gold-100); color: var(--gold-700); }
+.top-product-rank.rank-2 { background: var(--gray-200); color: var(--gray-600); }
+.top-product-rank.rank-3 { background: var(--gold-50); color: var(--gold-600); }
+.top-product-rank.rank-default { background: var(--gray-100); color: var(--gray-500); }
+
+.top-product-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.top-product-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.top-product-qty {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+.top-product-revenue {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--primary-600);
+    white-space: nowrap;
+}
+
+/* === Online Orders === */
+.online-status-tabs .btn {
+    border-radius: 20px;
+}
+
+.online-status-tabs .badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+/* === Opname === */
+.opname-input {
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    transition: all 0.2s;
+}
+
+.opname-input:focus {
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.opname-diff {
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* === Responsive Dashboard === */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        gap: 16px;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .chart-container {
+        height: 250px;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .chart-inner {
+        min-width: 100%;
+    }
+}
